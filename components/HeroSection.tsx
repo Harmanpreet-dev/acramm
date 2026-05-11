@@ -1,86 +1,162 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import slider2 from "@/images/slider2.jpg";
+import slider3 from "@/images/slider3.jpg";
+
+const slides = [
+    {
+        heading: "Let us join hands",
+        subtext: "for better credit decisions",
+        textPosition: "left" as const,
+        buttons: [
+            { label: "More About us", href: "/about", variant: "primary" },
+            { label: "Contact us", href: "/contact", variant: "secondary" },
+        ],
+        image: slider2,
+        bgClass: "bg-gradient-to-b from-sky-300 via-sky-200 to-gray-300",
+        darkText: true,
+    },
+    {
+        heading: "Credit Rating Services",
+        subtext: "Comprehensive assessments for SMEs, MFIs, and NBFIs",
+        textPosition: "right" as const,
+        buttons: [
+            { label: "Our Services", href: "#services", variant: "primary" },
+            { label: "Learn More", href: "/about", variant: "secondary" },
+        ],
+        image: slider3,
+        bgClass: "",
+        darkText: false,
+    },
+];
 
 export default function HeroSection() {
+    const [current, setCurrent] = useState(0);
+
+    const nextSlide = useCallback(() => {
+        setCurrent((prev) => (prev + 1) % slides.length);
+    }, []);
+
+    const prevSlide = useCallback(() => {
+        setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(nextSlide, 5000);
+        return () => clearInterval(timer);
+    }, [nextSlide]);
+
     return (
         <section
-            className="relative flex min-h-[90vh] items-center bg-gradient-to-br from-brand-dark via-gray-900 to-brand-dark pt-16 md:pt-20"
+            className="relative h-[70vh] md:h-[80vh] overflow-hidden pt-16 md:pt-20"
             aria-labelledby="hero-heading"
+            aria-roledescription="carousel"
+            aria-label="Hero carousel"
         >
-            {/* Background overlay pattern */}
-            <div className="absolute inset-0 opacity-10">
-                <div className="h-full w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtNGgydjRoNHYyaC00djRoLTJ2LTR6bTAtMzBoLTJ2LTRoMlYwaDJ2NGg0djJoLTR2NGgtMlY0em0tNiAwVjBoMnY0aDR2MmgtNHY0aC0yVjZoLTRWNGg0eiIvPjwvZz48L2c+PC9zdmc+')] bg-repeat" />
-            </div>
+            {/* Slides */}
+            {slides.map((slide, index) => (
+                <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label={`Slide ${index + 1} of ${slides.length}`}
+                    aria-hidden={index !== current}
+                >
+                    {/* Background */}
+                    {slide.image ? (
+                        <>
+                            <Image
+                                src={slide.image}
+                                alt=""
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                                aria-hidden="true"
+                            />
+                            <div className="absolute inset-0 bg-black/20" />
+                        </>
+                    ) : (
+                        <div className={`absolute inset-0 ${slide.bgClass}`} />
+                    )}
 
-            {/* Background image placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 to-brand-dark/70">
-                <div className="absolute right-0 top-0 h-full w-1/2 opacity-20">
-                    <div className="flex h-full items-center justify-center">
-                        <div className="h-96 w-96 rounded-full bg-brand-red/20 blur-3xl" />
-                    </div>
-                </div>
-            </div>
-
-            <div className="section-container relative z-10">
-                <div className="grid items-center gap-12 lg:grid-cols-2">
-                    {/* Text Content */}
-                    <div className="max-w-2xl">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-red">
-                            Credit Rating & Financial Services
-                        </p>
-                        <h1
-                            id="hero-heading"
-                            className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
-                        >
-                            Let us{" "}
-                            <span className="text-brand-red">join hands</span>
-                        </h1>
-                        <p className="mb-8 max-w-lg text-lg leading-relaxed text-gray-300">
-                            ACraMM is a leading credit rating and financial services company
-                            dedicated to empowering businesses with comprehensive credit
-                            solutions, due diligence, and capacity building for SMEs, MFIs,
-                            and NBFIs.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Link href="#about" className="btn-primary">
-                                Know More
-                            </Link>
-                            <Link href="#services" className="btn-secondary">
-                                Our Services
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* Hero Image Placeholder */}
-                    <div className="hidden lg:block" aria-hidden="true">
-                        <div className="relative">
-                            <div className="aspect-square rounded-2xl bg-gradient-to-br from-brand-red/20 to-transparent p-8">
-                                <div className="flex h-full w-full items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
-                                    <div className="text-center">
-                                        <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-brand-red/20">
-                                            <svg
-                                                className="h-10 w-10 text-brand-red"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                strokeWidth="1.5"
-                                                stroke="currentColor"
-                                                aria-hidden="true"
+                    {/* Content */}
+                    <div className="relative z-10 flex h-full items-center">
+                        <div className="w-full px-6 md:px-12 lg:px-20">
+                            <div className={`flex ${slide.textPosition === "right" ? "justify-end" : "justify-start"
+                                }`}>
+                                <div className="max-w-lg">
+                                    <h1
+                                        id={index === 0 ? "hero-heading" : undefined}
+                                        className="mb-3 text-4xl font-light italic leading-tight text-brand-red sm:text-5xl lg:text-6xl"
+                                    >
+                                        {slide.heading}
+                                    </h1>
+                                    <p className={`mb-8 text-lg sm:text-xl font-medium ${slide.darkText ? "text-gray-800" : "text-white"
+                                        }`}>
+                                        {slide.subtext}
+                                    </p>
+                                    <div className="flex flex-wrap gap-4">
+                                        {slide.buttons.map((btn) => (
+                                            <Link
+                                                key={btn.label}
+                                                href={btn.href}
+                                                className={
+                                                    btn.variant === "primary"
+                                                        ? "inline-flex items-center rounded-md bg-brand-red px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-red-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2"
+                                                        : "inline-flex items-center rounded-md border-2 border-gray-400 bg-white/80 px-8 py-3 text-sm font-semibold text-gray-700 transition-all hover:bg-white hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                                                }
                                             >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-sm text-gray-400">
-                                            Empowering Businesses Together
-                                        </p>
+                                                {btn.label}
+                                            </Link>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            ))}
+
+            {/* Navigation Arrows */}
+            <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-all hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-white"
+                aria-label="Previous slide"
+            >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+            <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm transition-all hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-white"
+                aria-label="Next slide"
+            >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+
+            {/* Dot Indicators */}
+            <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2" role="tablist" aria-label="Slide indicators">
+                {slides.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrent(index)}
+                        className={`h-2.5 rounded-full transition-all ${index === current
+                            ? "bg-brand-red w-7"
+                            : "bg-gray-400/60 w-2.5 hover:bg-gray-500"
+                            }`}
+                        role="tab"
+                        aria-selected={index === current}
+                        aria-label={`Go to slide ${index + 1}`}
+                    />
+                ))}
             </div>
         </section>
     );

@@ -1,10 +1,16 @@
 import ServiceCard from "./ServiceCard";
+import ser1Image from "@/images/ser-1-1.png";
+import ser2Image from "@/images/serv-1.png";
+import loan from "@/images/Loan-origination-system.jpg";
+import NBFI from "@/images/NBFI.jpg";
+import traning from "@/images/traning.png";
 
 const services = [
     {
-        title: "Corporate Credit Ratings",
+        title: "A-Cra Credit Ratings",
         description:
-            "Our flagship credit rating service provides comprehensive, transparent, and reliable credit assessments for banks, insurance companies, NBFIs, MFIs, and corporations across the region. We employ rigorous methodologies to evaluate creditworthiness, helping financial institutions make informed decisions.",
+            "To support the growth of Small and Medium Enterprises (SMEs), A-Cra provides Credit Rating Services for faster credit decisions by banks and other financial institutions.",
+        image: ser1Image,
         icon: (
             <svg
                 className="h-8 w-8 text-brand-red"
@@ -23,9 +29,10 @@ const services = [
         ),
     },
     {
-        title: "Bank (Internal) Credit Rating Models",
+        title: "A-Cra Credit Due Diligence for SMEs",
         description:
-            "Robust internal credit rating models designed for banks to strengthen their internal risk assessment frameworks. Our models include credit scoring, portfolio risk analysis, and regulatory compliance tools that integrate seamlessly with existing banking systems.",
+            "To support Banks / FIs with an independent opinion about credit credentials of Small and Medium Enterprises for faster credit decisions.\nHelps Small and Medium Enterprises in getting Loans including collateral free loans from Banks / FIs.",
+        image: ser2Image,
         icon: (
             <svg
                 className="h-8 w-8 text-brand-red"
@@ -38,15 +45,16 @@ const services = [
                 <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                 />
             </svg>
         ),
     },
     {
-        title: "Loan Origination (Appraisal) Systems",
+        title: "A-Cra Credit Appraisal Processing System (CAPS) and Loan Origination System (LOS)",
         description:
-            "Comprehensive digital platforms that manage the entire loan lifecycle from application to disbursement. Our systems include CAPS for business loans, LOS for retail loans, and CCAS for credit cards — providing automated workflows, risk scoring, and compliance checks.",
+            "To support commercial banks and other financial institutions, A-Cra provides a comprehensive Credit Appraisal Processing System (CAPS) for Small, Medium and Large Companies.\nA-Cra also provides Score Based Loan Origination Systems (LOS) for product specific loans which are risk sensitive.",
+        image: loan,
         icon: (
             <svg
                 className="h-8 w-8 text-brand-red"
@@ -65,9 +73,10 @@ const services = [
         ),
     },
     {
-        title: "IFRS-9 Implementation Support Service",
+        title: "A-Cra Grading of MFIs and NBFIs :",
         description:
-            "Specialized IFRS-9 implementation support including Expected Credit Loss (ECL) models, data validation and reporting, regulatory compliance support, and financial risk assessment for Microfinance Institutions and Non-Banking Financial Institutions.",
+            "To validate capacity of MFIs and NBFIs for sustainable growth.\nA-Cra Gradings shall help in developing faith and trust in their operations.\nAnd also enhance their fund raising capacity.",
+        image: NBFI,
         icon: (
             <svg
                 className="h-8 w-8 text-brand-red"
@@ -86,9 +95,10 @@ const services = [
         ),
     },
     {
-        title: "Consulting and Training Services",
+        title: "A-Cra Training and Capacity Building support to Banks / FIs for MSME Lending.",
         description:
-            "Comprehensive consulting and training programs covering financial risk consulting, credit risk training, banking compliance workshops, loan assessment training, and IFRS-9 training programs to strengthen institutional capabilities across the financial sector.",
+            "To develop credit risk skills for quality decisions for lending to Micro, Small and Medium Enterprises.\nHelps MSMEs in getting financial help from banks / FIs.",
+        image: traning,
         icon: (
             <svg
                 className="h-8 w-8 text-brand-red"
@@ -116,24 +126,6 @@ export default function ServicesSection() {
             aria-labelledby="services-heading"
         >
             <div className="section-container">
-                {/* Section Header */}
-                <div className="mb-16 text-center">
-                    <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-red">
-                        What We Offer
-                    </p>
-                    <h2
-                        id="services-heading"
-                        className="mb-4 text-3xl font-bold text-brand-dark sm:text-4xl"
-                    >
-                        Our Services
-                    </h2>
-                    <p className="mx-auto max-w-2xl text-brand-gray">
-                        We provide a comprehensive suite of credit rating, technology, and
-                        training solutions designed to strengthen financial ecosystems and
-                        empower businesses.
-                    </p>
-                </div>
-
                 {/* Services Grid */}
                 <div className="space-y-16 lg:space-y-24">
                     {services.map((service, index) => (
@@ -142,6 +134,7 @@ export default function ServicesSection() {
                             title={service.title}
                             description={service.description}
                             icon={service.icon}
+                            image={"image" in service ? service.image : undefined}
                             reversed={index % 2 !== 0}
                             index={index + 1}
                         />

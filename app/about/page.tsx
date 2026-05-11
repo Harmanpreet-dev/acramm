@@ -1,5 +1,12 @@
 import { Metadata } from "next";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import surinder from "@/images/team/surinder.jpg";
+import boboMyint from "@/images/team/BoBoMyint.jpg";
+import pyiSoeHtin from "@/images/team/PyiSoeHtin.jpg";
+import mayThuHlaing from "@/images/team/MayThuHlaing.jpg";
+import ganeshChittoor from "@/images/team/GaneshChittoor.jpg";
+import rohitSahni from "@/images/team/RohitSahni.jpg";
+import pranshuGupta from "@/images/team/PranshuGupta.jpg";
 
 export const metadata: Metadata = {
     title: "About Us - ACraMM",
@@ -9,42 +16,49 @@ export const metadata: Metadata = {
 
 const boardMembers = [
     {
-        name: "Suntae Myoung",
+        name: "Surinder Angroola",
         title: "Director",
-        bio: "A Senior Professional with more than 15 years of experience. Previously worked in Governance, Banking & Finance. Has experience in Risk Management, Microfinance, Compliance, Anti-money laundering and Fraud.",
+        image: surinder,
+        bio: "A banking professional with more than 30 years of experience. Having a Post-graduation degree in Commerce (Banking & Finance), he also holds professional qualifications in Risk Management, Microfinance, Compliance, International Banking and Treasury.\n\nHe headed teams in different operational areas like Credit Risk, MSME Lending, Retail Banking, Microfinance, Compliance, Risk Management etc. He has a good understanding of Myanmar financial sector as he headed an Indian Bank at Yangon for 3 years.",
     },
     {
-        name: "Dr Ba Myint",
+        name: "Bo Bo Myint",
         title: "Director",
-        bio: "A Senior Professional with over 19 years of experience in the banking industry. Has extensive experience in Myanmar. He holds a Master's degree in Commerce and MBA (Banking and Finance) from Yangon University of Economics.",
+        image: boboMyint,
+        bio: "A Senior Professional with over 15 years of experience in the commercial banking and as a financial consultant in Myanmar. He holds a bachelor's degree of Commerce and MBA (Banking and Finance) from Yangon University of Economics.\n\nHe has also served as a Technical Expert for international agencies like GIZ, AFC and ICON for development of financial sector in Myanmar.",
     },
     {
-        name: "Pyithu Htike",
+        name: "Pyi Soe Htin",
         title: "Director",
-        bio: "Graduated from Yangon University of Economics. Has experience in banking sector and financial inclusion.",
+        image: pyiSoeHtin,
+        bio: "Graduated from George Mason University (US) as a Bachelor of Science in Finance. Worked in prominent Wall Street financial institutions in US.\n\nRepatriated to Myanmar in 2015 and worked with Asia Green Development Bank (AGD Bank) in various Executive positions for about 5 years.",
     },
     {
-        name: "Moe Thu Maung",
+        name: "May Thu Hlaing",
         title: "Director",
-        bio: "A Senior Professional with extensive experience in Accounting, Auditing and Financial Advisory. CPA (Myanmar), A-Cra based Accountant. 15 years experience. Partner and Managing Partner of Cornerstone Business Solutions (CBS) and Htike & Partners Co., Ltd.",
+        image: mayThuHlaing,
+        bio: "A Senior Certified Public Accountant (CPA) with more than 15 years of experience in accounting, auditing and financial advisory. She holds various professional qualifications such as CPA (Myanmar), Chartered Accountant (Singapore), CPA (Australia) and ASEAN CPA.\n\nShe is Founder and Managing Partner of Competency Business Solutions (CBS) and May & Partner's Co. Ltd.",
     },
 ];
 
 const associates = [
     {
-        name: "Ramesh Chitkara",
+        name: "Ganesh Chittoor",
         title: "Associate & Advisor",
-        bio: "An experienced Banking and IT Professional. He was a part of Core Banking Implementation Team in large-scale banks. Has 17+ years in the banking sector, technology, software, infrastructure, and core banking products.",
+        image: ganeshChittoor,
+        bio: "An experienced Banking and IT Professional. He was a part of Core Banking Implementation Team in a large size Indian bank. He also worked as IT faculty in bank's Training Institute for 2 years. He has handled many procurement and implementation projects pertaining to hardware, software, networking and data center right from preparation of RFP to installation and smooth functioning of projects.",
     },
     {
-        name: "Karn Syed",
+        name: "Rohit Sahni",
         title: "Associate & Advisor",
-        bio: "A seasoned IT expert/Professional with experience in emerging markets and digital transformation for 15+ years. Has more than 25 years of experience in services (SCADA, SaaS) and Micro-finance.",
+        image: rohitSahni,
+        bio: "A seasoned sales professional with experience in strategic sales and digital transformation for BFSI. His more than 25 years of experience across ASEAN, SAARC and West Africa brings value to emerging markets including Myanmar.",
     },
     {
-        name: "Francis Ogden",
+        name: "Pranshu Gupta",
         title: "Associate & Advisor",
-        bio: "He has a degree in Integrated Circuit (Electronics and Telecommunications) and MBA. He worked for Telecom, a software company, and Biman Bangladesh Airlines. Has experience in global consulting, management, and IT Project Management.",
+        image: pranshuGupta,
+        bio: "He holds a bachelor degree of B. Tech. (Electronics and Communications) and MBA. He served in \"Wipro\" a software company as a Senior Software Engineer for two and half years. He also worked with another global company \"Cognizant\" as Product Manager for about 3 years till March, 2019. He is an IT Product Developer and part of our team of advisors.",
     },
 ];
 
@@ -62,9 +76,7 @@ export default function AboutPage() {
                     </h1>
                     <div className="mb-8 h-1 w-16 bg-brand-red" aria-hidden="true" />
                     <p className="max-w-3xl leading-relaxed text-brand-gray">
-                        A-Cra is a Credit Rating Agency in Myanmar with experts from Myanmar
-                        and other countries, providing services to Micro, Small and Medium
-                        Enterprises.
+                        A-Cra is a Credit Rating Agency set up in Myanmar with domain experts from Myanmar and other countries. Our solutions are mainly to help Micro, Small and Medium Enterprises in getting faster credit decisions from financial institutions.
                     </p>
                 </div>
             </section>
@@ -76,20 +88,21 @@ export default function AboutPage() {
             >
                 <div className="section-container">
                     <div className="mb-10">
-                        <span className="inline-block rounded bg-brand-red px-4 py-2 text-sm font-semibold text-white">
+                        <span className="inline-block border-b-2 border-brand-red pb-1 text-lg font-bold text-brand-red">
                             Board
                         </span>
                         <h2 id="board-heading" className="sr-only">
                             Board Members
                         </h2>
                     </div>
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-8">
                         {boardMembers.map((member) => (
                             <TeamMemberCard
                                 key={member.name}
                                 name={member.name}
                                 title={member.title}
                                 bio={member.bio}
+                                image={"image" in member ? member.image : undefined}
                             />
                         ))}
                     </div>
@@ -103,20 +116,21 @@ export default function AboutPage() {
             >
                 <div className="section-container">
                     <div className="mb-10">
-                        <span className="inline-block rounded bg-brand-red px-4 py-2 text-sm font-semibold text-white">
+                        <span className="inline-block border-b-2 border-brand-red pb-1 text-lg font-bold text-brand-red">
                             Associates and Advisors
                         </span>
                         <h2 id="associates-heading" className="sr-only">
                             Associates and Advisors
                         </h2>
                     </div>
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-8">
                         {associates.map((member) => (
                             <TeamMemberCard
                                 key={member.name}
                                 name={member.name}
                                 title={member.title}
                                 bio={member.bio}
+                                image={"image" in member ? member.image : undefined}
                             />
                         ))}
                     </div>

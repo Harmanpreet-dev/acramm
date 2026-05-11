@@ -1,7 +1,10 @@
+import Image, { StaticImageData } from "next/image";
+
 interface ServiceCardProps {
     title: string;
     description: string;
     icon: React.ReactNode;
+    image?: StaticImageData;
     reversed?: boolean;
     index: number;
 }
@@ -10,8 +13,8 @@ export default function ServiceCard({
     title,
     description,
     icon,
+    image,
     reversed = false,
-    index,
 }: ServiceCardProps) {
     return (
         <article
@@ -20,32 +23,37 @@ export default function ServiceCard({
         >
             {/* Text Content */}
             <div className={reversed ? "lg:[direction:ltr]" : ""}>
-                <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-red/10 text-sm font-bold text-brand-red">
-                        {String(index).padStart(2, "0")}
-                    </span>
-                    <div className="h-px flex-1 bg-gray-200" />
-                </div>
-                <h3 className="mb-3 text-xl font-bold text-brand-dark sm:text-2xl">
+                <h3 className="mb-3 text-xl font-bold text-brand-red sm:text-2xl">
                     {title}
                 </h3>
-                <p className="leading-relaxed text-brand-gray">{description}</p>
+                <p className="whitespace-pre-line leading-relaxed text-brand-gray">
+                    {description}
+                </p>
             </div>
 
-            {/* Image Placeholder */}
+            {/* Image or Placeholder */}
             <div
-                className={`aspect-[4/3] overflow-hidden rounded-xl bg-gradient-to-br from-brand-light to-gray-100 ${reversed ? "lg:[direction:ltr]" : ""
-                    }`}
-                aria-hidden="true"
+                className={`overflow-hidden rounded-xl ${reversed ? "lg:[direction:ltr]" : ""
+                    } ${!image ? "aspect-[4/3] bg-gradient-to-br from-brand-light to-gray-100" : ""}`}
             >
-                <div className="flex h-full w-full items-center justify-center p-6">
-                    <div className="text-center">
-                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-brand-red/10">
-                            {icon}
+                {image ? (
+                    <Image
+                        src={image}
+                        alt={title}
+                        width={600}
+                        height={400}
+                        className="h-auto w-full rounded-xl"
+                    />
+                ) : (
+                    <div className="flex h-full w-full items-center justify-center p-6">
+                        <div className="text-center">
+                            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-brand-red/10">
+                                {icon}
+                            </div>
+                            <p className="text-sm font-medium text-brand-gray">{title}</p>
                         </div>
-                        <p className="text-sm font-medium text-brand-gray">{title}</p>
                     </div>
-                </div>
+                )}
             </div>
         </article>
     );
