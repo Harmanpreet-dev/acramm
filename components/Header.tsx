@@ -7,7 +7,7 @@ import logo from "@/images/logo.png";
 
 const serviceLinks = [
     {
-        href: "/services/external-credit-ratings",
+        href: "/services/corporate-credit-ratings",
         label: "Corporate Credit Ratings",
         subServices: [
             "Bank Credit Ratings",

@@ -9,7 +9,7 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-    { href: "/services/external-credit-ratings", label: "Corporate Credit Ratings" },
+    { href: "/services/corporate-credit-ratings", label: "Corporate Credit Ratings" },
     { href: "/services/internal-credit-ratings", label: "Bank (Internal) Credit Rating Models" },
     { href: "/services/credit-appraisal-system", label: "Loan Origination (Appraisal) Systems" },
     { href: "/services/mfi-nbfi-gradings", label: "IFRS-9 Implementation Support Service" },
