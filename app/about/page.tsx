@@ -68,7 +68,7 @@ const associates = [
     // },
     {
         name: "Dr. Win Lwin",
-        title: "Associate & Advisor",
+        title: "Advisor",
         image: winLwin,
         bio: "With over two decades of experience in the financial sector, Mr. Win Lwin currently serves as the Chief Executive Officer of Myanma Tourism Bank (MTB), a position he has held since May 2023. \n\nSince assuming leadership, he has played a pivotal role in driving the bank’s transformation, strengthening its strategic direction, and enhancing overall performance. In recognition of his leadership and contributions, he has been honored with the “Innovative Excellence Award 2024” by The CEO Views and the “Most Iconic Business Leaders Award 2024” by The Enterprise World. \n\n addition to his executive responsibilities (MTB), he has Advisory role  in  Aurora Credit Rating Agency as a Rating Committee Member.",
     },

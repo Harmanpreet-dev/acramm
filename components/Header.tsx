@@ -10,52 +10,36 @@ const serviceLinks = [
         href: "/services/corporate-credit-ratings",
         label: "Corporate Credit Ratings",
         subServices: [
-            "Bank Credit Ratings",
-            "Insurance Company Ratings",
-            "NBFI / MFI Credit Ratings",
-            "Singapore Company Ratings",
-            "Myanmar Company Ratings",
-        ],
-    },
-    {
-        href: "/services/internal-credit-ratings",
-        label: "Bank (Internal) Credit Rating Models",
-        subServices: [
-            "Internal Risk Assessment Models",
-            "Credit Scoring Models",
-            "Portfolio Risk Models",
-            "Regulatory Compliance Models",
+            { label: "Bank Credit Ratings", href: "/services/corporate-credit-ratings/bank-credit-ratings" },
+            { label: "Insurance Company Ratings", href: "/services/corporate-credit-ratings/insurance-company-ratings" },
+            { label: "NBFI / MFI Credit Ratings", href: "/services/corporate-credit-ratings/nbfi-mfi-credit-ratings" },
+            { label: "Singapore Company Ratings", href: "/services/corporate-credit-ratings/singapore-company-ratings" },
+            { label: "Myanmar Company Ratings", href: "/services/corporate-credit-ratings/myanmar-company-ratings" },
         ],
     },
     {
         href: "/services/credit-appraisal-system",
         label: "Loan Origination (Appraisal) Systems",
         subServices: [
-            "Business Loans (CAPS)",
-            "Retail Loans (LOS)",
-            "Credit Cards (CCAS)",
+            { label: "Business Loans (CAPS)", href: "/services/credit-appraisal-system/caps-business-loans" },
+            { label: "Retail Loans (LOS)", href: "/services/credit-appraisal-system/los-retail-loans" },
+            { label: "Credit Cards (CCAS)", href: "/services/credit-appraisal-system/ccas-credit-cards" },
         ],
     },
     {
-        href: "/services/mfi-nbfi-gradings",
+        href: "/services/internal-credit-ratings",
+        label: "Bank (Internal) Credit Rating Models",
+        subServices: [],
+    },
+    {
+        href: "/services/ifrs9-implementation",
         label: "IFRS-9 Implementation Support Service",
-        subServices: [
-            "Expected Credit Loss (ECL) Models",
-            "Data Validation & Reporting",
-            "Regulatory Compliance Support",
-            "Financial Risk Assessment",
-        ],
+        subServices: [],
     },
     {
         href: "/services/training-capacity-building",
         label: "Consulting and Training Services",
-        subServices: [
-            "Financial Risk Consulting",
-            "Credit Risk Training",
-            "Banking Compliance Workshops",
-            "Loan Assessment Training",
-            "IFRS-9 Training Programs",
-        ],
+        subServices: [],
     },
 ];
 
@@ -186,7 +170,7 @@ export default function Header() {
 
                             {/* Mega Dropdown Menu */}
                             <div
-                                className={`absolute right-0 top-full z-50 mt-2 w-[700px] transition-all duration-200 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 ${isServicesOpen
+                                className={`absolute right-0 top-full z-50 mt-2 w-[680px] transition-all duration-200 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 ${isServicesOpen
                                     ? "visible translate-y-0 opacity-100"
                                     : "invisible -translate-y-1 opacity-0"
                                     }`}
@@ -199,29 +183,56 @@ export default function Header() {
                                             Our Services
                                         </span>
                                     </div>
-                                    <div className="grid grid-cols-2 gap-x-6 gap-y-4 p-6 lg:grid-cols-3">
-                                        {serviceLinks.map((service) => (
-                                            <div key={service.href} className="space-y-2">
+                                    <div className="p-6">
+                                        {/* Top row: services with sub-items */}
+                                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                                            {serviceLinks.filter(s => s.subServices.length > 0).map((service) => (
+                                                <div key={service.href} className="space-y-2">
+                                                    <Link
+                                                        href={service.href}
+                                                        className="block text-sm font-semibold text-brand-dark transition-colors hover:text-brand-red focus:text-brand-red focus:outline-none"
+                                                        role="menuitem"
+                                                        onClick={() => setIsServicesOpen(false)}
+                                                    >
+                                                        {service.label}
+                                                    </Link>
+                                                    <ul className="space-y-1" aria-label={`${service.label} sub-services`}>
+                                                        {service.subServices.map((sub) => (
+                                                            <li
+                                                                key={sub.href}
+                                                                className="pl-2 border-l-2 border-gray-200"
+                                                            >
+                                                                <Link
+                                                                    href={sub.href}
+                                                                    className="text-xs text-gray-500 leading-relaxed hover:text-brand-red transition-colors"
+                                                                    onClick={() => setIsServicesOpen(false)}
+                                                                >
+                                                                    {sub.label}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Divider */}
+                                        <div className="my-4 border-t border-gray-100" />
+
+                                        {/* Bottom row: standalone services */}
+                                        <div className="grid grid-cols-3 gap-x-6">
+                                            {serviceLinks.filter(s => s.subServices.length === 0).map((service) => (
                                                 <Link
+                                                    key={service.href}
                                                     href={service.href}
-                                                    className="block text-sm font-semibold text-brand-dark transition-colors hover:text-brand-red focus:text-brand-red focus:outline-none"
+                                                    className="block text-sm font-semibold text-brand-dark transition-colors hover:text-brand-red focus:text-brand-red focus:outline-none py-1"
                                                     role="menuitem"
                                                     onClick={() => setIsServicesOpen(false)}
                                                 >
                                                     {service.label}
                                                 </Link>
-                                                <ul className="space-y-1" aria-label={`${service.label} sub-services`}>
-                                                    {service.subServices.map((sub) => (
-                                                        <li
-                                                            key={sub}
-                                                            className="text-xs text-gray-500 leading-relaxed pl-2 border-l-2 border-gray-200"
-                                                        >
-                                                            {sub}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -340,16 +351,27 @@ export default function Header() {
                                             >
                                                 {service.label}
                                             </Link>
-                                            <ul className="mt-1 ml-3 space-y-0.5">
-                                                {service.subServices.map((sub) => (
-                                                    <li
-                                                        key={sub}
-                                                        className="text-[11px] text-gray-400 leading-relaxed pl-2 border-l border-gray-200"
-                                                    >
-                                                        {sub}
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            {service.subServices.length > 0 && (
+                                                <ul className="mt-1 ml-3 space-y-0.5">
+                                                    {service.subServices.map((sub) => (
+                                                        <li
+                                                            key={sub.href}
+                                                            className="pl-2 border-l border-gray-200"
+                                                        >
+                                                            <Link
+                                                                href={sub.href}
+                                                                className="text-[11px] text-gray-400 leading-relaxed hover:text-brand-red transition-colors"
+                                                                onClick={() => {
+                                                                    setIsMenuOpen(false);
+                                                                    setIsMobileServicesOpen(false);
+                                                                }}
+                                                            >
+                                                                {sub.label}
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
