@@ -56,6 +56,7 @@ const serviceLinks = [
 const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
+    { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact Us" },
 ];
 
@@ -138,7 +139,7 @@ export default function Header() {
                         className="hidden items-center gap-8 md:flex"
                         aria-label="Main navigation"
                     >
-                        {navLinks.slice(0, 2).map((link) => (
+                        {navLinks.slice(0, 3).map((link) => (
                             <Link
                                 key={link.label}
                                 href={link.href}
@@ -299,6 +300,13 @@ export default function Header() {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             About Us
+                        </Link>
+                        <Link
+                            href="/careers"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-brand-gray transition-colors hover:bg-brand-light hover:text-brand-red"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Careers
                         </Link>
 
                         {/* Mobile Services Accordion */}

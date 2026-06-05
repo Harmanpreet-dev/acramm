@@ -5,15 +5,16 @@ import logo from "@/images/logo.png";
 const quickLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
+    { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
 ];
 
 const serviceLinks = [
     { href: "/services/corporate-credit-ratings", label: "Corporate Credit Ratings" },
-    { href: "/services/internal-credit-ratings", label: "Bank (Internal) Credit Rating Models" },
     { href: "/services/credit-appraisal-system", label: "Loan Origination (Appraisal) Systems" },
-    { href: "/services/mfi-nbfi-gradings", label: "IFRS-9 Implementation Support Service" },
-    { href: "/services/training-capacity-building", label: "Consulting and Training Services" },
+    { href: "/services/internal-credit-ratings", label: "Bank's (Internal) Credit Rating Models" },
+    { href: "/services/consulting-services", label: "Consulting Services (Banks/NBFIs)" },
+    { href: "/services/training-capacity-building", label: "Training and Capacity Building" },
 ];
 
 const socialLinks = [
@@ -86,10 +87,7 @@ export default function Footer() {
                             <Image src={logo} alt="A-Cra" width={120} height={48} />
                         </Link>
                         <p className="mt-4 text-sm leading-relaxed text-gray-400">
-                            ACraMM is a leading credit rating and financial services company
-                            providing comprehensive solutions for SMEs, MFIs, and NBFIs. We
-                            are committed to empowering businesses through transparent credit
-                            assessment and innovative technology.
+                            A-Cra is a Credit Rating Agency set up in Myanmar with domain experts from Myanmar and other countries. We plan to provide corporate credit ratings (due diligence) to different types of Myanmar companies. We also offer Loan Origination (Processing) Systems to commercial banks and other financial institutions for quality credit decisions.
                         </p>
                     </div>
 
@@ -184,7 +182,7 @@ export default function Footer() {
                                         />
                                     </svg>
                                     <span className="text-sm text-gray-400">
-                                        Dhaka, Bangladesh
+                                        No 258/262, 12th Floor, Classic Strand Condo, Corner of 27th Street (Lower) and Strand Road, Pebedan Township, Yangon, Myanmar.
                                     </span>
                                 </li>
                                 <li className="flex items-start gap-3">
@@ -203,10 +201,10 @@ export default function Footer() {
                                         />
                                     </svg>
                                     <a
-                                        href="tel:+8801234567890"
+                                        href="tel:018256425"
                                         className="text-sm text-gray-400 transition-colors hover:text-brand-red"
                                     >
-                                        +880 1234 567 890
+                                        01-8256425, 01-8248237
                                     </a>
                                 </li>
                                 <li className="flex items-start gap-3">

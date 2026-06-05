@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply text-brand-dark antialiased;
+    @apply text-brand-dark antialiased text-justify;
   }
 }
 

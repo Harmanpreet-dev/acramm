@@ -34,7 +34,7 @@ const contactInfo = [
         content: (
             <p className="text-sm leading-relaxed text-brand-gray">
                 No 258/262, 12th Floor, Classic Strand Condo, Corner of 27th Street
-                (Lower) and Strand Road, Pabedan Township, Yangon, Myanmar.
+                (Lower) and Strand Road, Pebedan Township, Yangon, Myanmar.
             </p>
         ),
     },
@@ -58,9 +58,8 @@ const contactInfo = [
         ),
         content: (
             <div className="space-y-1 text-sm text-brand-gray">
-                <p>01-8260425, 01-8248237</p>
-                <p>09-440700276, 09-78708261</p>
-                <p>09-256066504</p>
+                <p>01-8256425, 01-8248237</p>
+                <p>09400759957, 09440700276</p>
             </div>
         ),
     },
@@ -85,28 +84,22 @@ const contactInfo = [
         content: (
             <div className="space-y-1 text-sm text-brand-gray">
                 <a
-                    href="mailto:angrodeep@acramm.com"
+                    href="mailto:info@acramm.com"
                     className="block transition-colors hover:text-brand-red"
                 >
-                    angrodeep@acramm.com
+                    info@acramm.com
                 </a>
                 <a
-                    href="mailto:bodomyint@acramm.com"
+                    href="mailto:angroolasp@acramm.com"
                     className="block transition-colors hover:text-brand-red"
                 >
-                    bodomyint@acramm.com
+                    angroolasp@acramm.com
                 </a>
                 <a
-                    href="mailto:pyithuhtik@acramm.com"
+                    href="mailto:bobomyint@acramm.com"
                     className="block transition-colors hover:text-brand-red"
                 >
-                    pyithuhtik@acramm.com
-                </a>
-                <a
-                    href="mailto:maybu@acramm.com"
-                    className="block transition-colors hover:text-brand-red"
-                >
-                    maybu@acramm.com
+                    bobomyint@acramm.com
                 </a>
             </div>
         ),
@@ -203,6 +196,23 @@ export default function ContactPage() {
                         <div>
                             <ContactForm />
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Map Section */}
+            <section className="bg-white py-16">
+                <div className="section-container">
+                    <div className="overflow-hidden rounded-xl">
+                        <iframe
+                            src="https://www.google.com/maps/d/u/2/embed?mid=1A1NVM_8GdXL4-ua6FQYBA2hRQ1Ocnd71"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            title="ACraMM Office Location"
+                        />
                     </div>
                 </div>
             </section>
