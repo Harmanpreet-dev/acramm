@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 interface ServiceCardProps {
     title: string;
     description: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
     image?: StaticImageData;
     reversed?: boolean;
     index: number;

@@ -28,18 +28,28 @@ const serviceLinks = [
     },
     {
         href: "/services/internal-credit-ratings",
-        label: "Bank (Internal) Credit Rating Models",
-        subServices: [],
+        label: "Bank's (Internal) Credit Rating Models",
+        subServices: [
+            { label: "MSME Credit Ratings", href: "/services/internal-credit-ratings/msme-credit-ratings" },
+            { label: "Large Company Ratings", href: "/services/internal-credit-ratings/large-company-ratings" },
+            { label: "Project-Based Ratings", href: "/services/internal-credit-ratings/project-based-ratings" },
+        ],
     },
     {
-        href: "/services/ifrs9-implementation",
-        label: "IFRS-9 Implementation Support Service",
-        subServices: [],
+        href: "/services/consulting-services",
+        label: "Consulting Services (Banks/NBFIs)",
+        subServices: [
+            { label: "IFRS-9 Implementation Support", href: "/services/consulting-services/ifrs9-implementation" },
+            { label: "Policy Formulation Services", href: "/services/consulting-services/policy-formulation" },
+        ],
     },
     {
         href: "/services/training-capacity-building",
-        label: "Consulting and Training Services",
-        subServices: [],
+        label: "Training and Capacity Building Services",
+        subServices: [
+            { label: "40-Hours Program on Credit Risk Management", href: "/services/training-capacity-building/credit-risk-management" },
+            { label: "6-Hours Workshop on IFRS-9 and Basel Norms", href: "/services/training-capacity-building/ifrs9-basel-norms" },
+        ],
     },
 ];
 
@@ -170,23 +180,22 @@ export default function Header() {
 
                             {/* Mega Dropdown Menu */}
                             <div
-                                className={`absolute right-0 top-full z-50 mt-2 w-[680px] transition-all duration-200 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 ${isServicesOpen
+                                className={`absolute right-0 top-full z-50 mt-2 w-[780px] transition-all duration-200 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 ${isServicesOpen
                                     ? "visible translate-y-0 opacity-100"
                                     : "invisible -translate-y-1 opacity-0"
                                     }`}
                                 role="menu"
                                 aria-label="Our Services submenu"
                             >
-                                <div className="rounded-lg bg-white shadow-lg ring-1 ring-black/5">
+                                <div className="rounded-lg bg-white shadow-lg ring-1 ring-black/5 max-h-[calc(100vh-100px)] overflow-y-auto">
                                     <div className="px-6 py-3 border-b border-gray-100">
                                         <span className="text-xs font-semibold uppercase tracking-wider text-brand-red">
                                             Our Services
                                         </span>
                                     </div>
                                     <div className="p-6">
-                                        {/* Top row: services with sub-items */}
-                                        <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                                            {serviceLinks.filter(s => s.subServices.length > 0).map((service) => (
+                                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+                                            {serviceLinks.map((service) => (
                                                 <div key={service.href} className="space-y-2">
                                                     <Link
                                                         href={service.href}
@@ -213,24 +222,6 @@ export default function Header() {
                                                         ))}
                                                     </ul>
                                                 </div>
-                                            ))}
-                                        </div>
-
-                                        {/* Divider */}
-                                        <div className="my-4 border-t border-gray-100" />
-
-                                        {/* Bottom row: standalone services */}
-                                        <div className="grid grid-cols-3 gap-x-6">
-                                            {serviceLinks.filter(s => s.subServices.length === 0).map((service) => (
-                                                <Link
-                                                    key={service.href}
-                                                    href={service.href}
-                                                    className="block text-sm font-semibold text-brand-dark transition-colors hover:text-brand-red focus:text-brand-red focus:outline-none py-1"
-                                                    role="menuitem"
-                                                    onClick={() => setIsServicesOpen(false)}
-                                                >
-                                                    {service.label}
-                                                </Link>
                                             ))}
                                         </div>
                                     </div>

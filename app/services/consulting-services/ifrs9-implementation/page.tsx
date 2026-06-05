@@ -23,7 +23,9 @@ export default function IFRS9ImplementationPage() {
                         <ol className="flex items-center gap-2 text-sm text-gray-400">
                             <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
                             <li aria-hidden="true">/</li>
-                            <li className="text-brand-red">IFRS-9 Implementation Support Service</li>
+                            <li><Link href="/services/consulting-services" className="hover:text-white transition-colors">Consulting Services</Link></li>
+                            <li aria-hidden="true">/</li>
+                            <li className="text-brand-red">IFRS-9 Implementation Support</li>
                         </ol>
                     </nav>
                     <h1 id="page-heading" className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">

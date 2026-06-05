@@ -1,28 +1,28 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import trainingImg from "@/images/traning.png";
+import consultingImg from "@/images/Consulting.png";
 
 export const metadata: Metadata = {
-    title: "Training and Capacity Building Services - ACraMM",
+    title: "Consulting Services (Banks/NBFIs) - ACraMM",
     description:
-        "A-Cra provides Training and Capacity Building Services to commercial banks in key areas of banking operations.",
+        "A-Cra provides consulting services for Banks and NBFIs including IFRS-9 Implementation Support and Policy Formulation Services.",
 };
 
 const subServices = [
     {
-        title: "40-Hours Program on Credit Risk Management",
-        description: "A comprehensive training program designed to develop credit risk skills for quality lending decisions, particularly for Micro, Small, and Medium Enterprises.",
-        href: "/services/training-capacity-building/credit-risk-management",
+        title: "IFRS-9 Implementation Support",
+        description: "Comprehensive support for commercial banks and financial institutions in implementing IFRS-9 compliant provisioning based on Expected Credit Losses.",
+        href: "/services/consulting-services/ifrs9-implementation",
     },
     {
-        title: "6-Hours Workshop on IFRS-9 and Basel Norms",
-        description: "A focused workshop providing banking professionals with a clear understanding of IFRS-9 requirements and Basel regulatory frameworks.",
-        href: "/services/training-capacity-building/ifrs9-basel-norms",
+        title: "Policy Formulation Services",
+        description: "Expert assistance in formulating credit policies, risk management frameworks, and operational guidelines for banks and NBFIs.",
+        href: "/services/consulting-services/policy-formulation",
     },
 ];
 
-export default function TrainingCapacityBuildingPage() {
+export default function ConsultingServicesPage() {
     return (
         <div className="pt-16 md:pt-20">
             {/* Hero Banner */}
@@ -36,14 +36,14 @@ export default function TrainingCapacityBuildingPage() {
                         <ol className="flex items-center gap-2 text-sm text-gray-400">
                             <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
                             <li aria-hidden="true">/</li>
-                            <li className="text-brand-red">Training and Capacity Building Services</li>
+                            <li className="text-brand-red">Consulting Services (Banks/NBFIs)</li>
                         </ol>
                     </nav>
                     <h1 id="page-heading" className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                        Training and Capacity Building Services
+                        Consulting Services (Banks/NBFIs)
                     </h1>
                     <p className="mt-4 max-w-2xl text-lg text-gray-300">
-                        A-Cra provides Training and Capacity Building Services to commercial banks in key areas of banking operations.
+                        A-Cra provides specialized consulting services to commercial banks and Non-Banking Financial Institutions in key areas of risk management and regulatory compliance.
                     </p>
                 </div>
             </section>
@@ -53,15 +53,18 @@ export default function TrainingCapacityBuildingPage() {
                 <div className="section-container">
                     <div className="max-w-3xl space-y-6 text-brand-gray text-lg leading-relaxed">
                         <p>
-                            A-Cra provides Training and Capacity Building Services to commercial banks in key areas of banking operations.
+                            A-Cra&apos;s consulting services are designed to help banks and NBFIs navigate complex regulatory requirements and strengthen their risk management frameworks. Our team of experienced professionals brings deep domain expertise in credit risk, financial reporting standards, and banking operations.
+                        </p>
+                        <p>
+                            We work closely with institutions to understand their specific needs and deliver tailored solutions that align with international best practices and local regulatory expectations.
                         </p>
                     </div>
 
                     {/* Image */}
                     <div className="mt-12 overflow-hidden rounded-xl">
                         <Image
-                            src={trainingImg}
-                            alt="Training and Capacity Building Services"
+                            src={consultingImg}
+                            alt="Consulting Services"
                             className="w-full h-auto"
                         />
                     </div>
@@ -73,7 +76,7 @@ export default function TrainingCapacityBuildingPage() {
                 <div className="section-container">
                     <div className="mb-12">
                         <h2 id="sub-services-heading" className="mb-4 text-2xl font-bold text-brand-dark sm:text-3xl">
-                            Our Training Programs
+                            Our Consulting Services
                         </h2>
                     </div>
 
@@ -90,7 +93,7 @@ export default function TrainingCapacityBuildingPage() {
                                             stroke="currentColor"
                                             aria-hidden="true"
                                         >
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
                                         </svg>
                                     </div>
                                     <h3 className="mb-2 text-lg font-semibold text-brand-dark group-hover:text-brand-red transition-colors">
@@ -117,10 +120,10 @@ export default function TrainingCapacityBuildingPage() {
                 <div className="section-container">
                     <div className="rounded-xl bg-brand-light p-8 text-center md:p-12">
                         <h3 className="mb-3 text-xl font-bold text-brand-dark">
-                            Interested in Our Training Programs?
+                            Need Consulting Support?
                         </h3>
                         <p className="mb-6 text-brand-gray">
-                            Get in touch with our team to learn how A-Cra can support your institution with tailored training and capacity building programs.
+                            Get in touch with our team to learn how A-Cra can support your institution with tailored consulting services.
                         </p>
                         <Link href="/contact" className="btn-primary">
                             Contact Us

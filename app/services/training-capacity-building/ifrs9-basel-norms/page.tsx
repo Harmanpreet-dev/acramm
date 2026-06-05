@@ -1,0 +1,101 @@
+import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import trainingImg from "@/images/traning.png";
+
+export const metadata: Metadata = {
+    title: "6-Hours Workshop on IFRS-9 and Basel Norms - Training - ACraMM",
+    description:
+        "A-Cra offers a focused 6-Hours Workshop on IFRS-9 and Basel Norms for banking professionals seeking to understand regulatory frameworks.",
+};
+
+export default function IFRS9BaselNormsPage() {
+    return (
+        <div className="pt-16 md:pt-20">
+            {/* Hero Banner */}
+            <section className="relative overflow-hidden bg-brand-dark py-16 md:py-24" aria-labelledby="page-heading">
+                <div className="absolute inset-0" aria-hidden="true">
+                    <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-brand-red/10 blur-3xl" />
+                    <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-brand-red/10 blur-3xl" />
+                </div>
+                <div className="section-container relative z-10">
+                    <nav aria-label="Breadcrumb" className="mb-6">
+                        <ol className="flex items-center gap-2 text-sm text-gray-400">
+                            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+                            <li aria-hidden="true">/</li>
+                            <li><Link href="/services/training-capacity-building" className="hover:text-white transition-colors">Training and Capacity Building</Link></li>
+                            <li aria-hidden="true">/</li>
+                            <li className="text-brand-red">IFRS-9 and Basel Norms Workshop</li>
+                        </ol>
+                    </nav>
+                    <h1 id="page-heading" className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+                        6-Hours Workshop on IFRS-9 and Basel Norms
+                    </h1>
+                    <p className="mt-4 max-w-2xl text-lg text-gray-300">
+                        A focused workshop designed to provide banking professionals with a clear understanding of IFRS-9 requirements and Basel regulatory frameworks.
+                    </p>
+                </div>
+            </section>
+
+            {/* Content Section */}
+            <section className="section-padding bg-white" aria-labelledby="content-heading">
+                <div className="section-container">
+                    <div className="max-w-3xl space-y-6 text-brand-gray text-lg leading-relaxed">
+                        <p>
+                            A-Cra&apos;s 6-Hours Workshop on IFRS-9 and Basel Norms provides a concise yet comprehensive overview of the key regulatory frameworks that govern credit risk provisioning and capital adequacy in modern banking.
+                        </p>
+                        <p>
+                            The workshop covers the fundamentals of IFRS-9 Expected Credit Loss (ECL) methodology, staging criteria, forward-looking information requirements, and the practical implications for financial institutions.
+                        </p>
+                        <p>
+                            Participants also gain insights into Basel norms including capital adequacy requirements, risk-weighted assets calculation, and the interplay between IFRS-9 provisioning and Basel capital frameworks.
+                        </p>
+                        <p>
+                            This workshop is ideal for senior management, risk officers, and finance professionals who need a solid understanding of these regulatory frameworks without committing to a longer program.
+                        </p>
+                    </div>
+
+                    {/* Image */}
+                    <div className="mt-12 overflow-hidden rounded-xl">
+                        <Image
+                            src={trainingImg}
+                            alt="IFRS-9 and Basel Norms Workshop"
+                            className="w-full h-auto"
+                        />
+                    </div>
+
+                    {/* Download PDF */}
+                    <div className="mt-8">
+                        <a
+                            href="/pdf/6-Hours-Workshop-IFRS9-Basel-Guidelines.pdf"
+                            download
+                            className="btn-primary inline-flex items-center gap-2"
+                        >
+                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                            Download Workshop Brochure (PDF)
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="section-padding bg-brand-light">
+                <div className="section-container">
+                    <div className="rounded-xl bg-white p-8 text-center md:p-12">
+                        <h3 className="mb-3 text-xl font-bold text-brand-dark">
+                            Interested in the IFRS-9 and Basel Norms Workshop?
+                        </h3>
+                        <p className="mb-6 text-brand-gray">
+                            Get in touch with our team to learn more about scheduling this workshop for your institution.
+                        </p>
+                        <Link href="/contact" className="btn-primary">
+                            Contact Us
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+}
