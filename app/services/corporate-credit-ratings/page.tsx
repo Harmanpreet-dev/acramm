@@ -1,5 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
+import img1 from "@/images/corporateCreditRatingsImg1.png";
+import img2 from "@/images/corporateCreditRatingsImg2.png";
+import img3 from "@/images/corporateCreditRatingsImg3.png";
+import img4 from "@/images/corporateCreditRatingsImg 4.png";
+import img5 from "@/images/corporateCreditRatingsImg5.png";
 
 export const metadata: Metadata = {
     title: "Corporate Credit Ratings - ACraMM",
@@ -7,26 +13,31 @@ export const metadata: Metadata = {
         "A-CRA provides comprehensive external credit rating services including corporate, bank, insurance, NBFI/MFI, and international company ratings.",
 };
 
-const subServices = [
+const subServices: { title: string; description: string; image: StaticImageData }[] = [
     {
         title: "Bank Credit Ratings",
         description: "We offer Risk-Based Corporate Credit Rating services to commercial banks in Myanmar. These ratings are designed to support banks in strengthening their overall risk profile and market positioning.",
+        image: img1,
     },
     {
         title: "Insurance Company Ratings",
         description: "Specialized ratings for insurance companies evaluating claims-paying ability, financial stability, and operational performance.",
+        image: img2,
     },
     {
         title: "NBFI / MFI Credit Ratings",
         description: "Tailored credit ratings for Non-Banking Financial Institutions and Microfinance Institutions.",
+        image: img3,
     },
     {
         title: "Singapore Company Ratings",
         description: "Credit rating services for Singapore-based companies seeking transparent credit assessments.",
+        image: img4,
     },
     {
         title: "Myanmar Company Ratings",
         description: "Localized credit rating services for Myanmar companies to support access to capital and financial transparency.",
+        image: img5,
     },
 ];
 
@@ -85,17 +96,12 @@ export default function ExternalCreditRatingsPage() {
                                     key={service.title}
                                     className="group rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-brand-red/20 hover:shadow-md h-full"
                                 >
-                                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red/10">
-                                        <svg
-                                            className="h-6 w-6 text-brand-red"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
-                                            stroke="currentColor"
-                                            aria-hidden="true"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                                        </svg>
+                                    <div className="mb-4 overflow-hidden rounded-lg">
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-48 object-cover"
+                                        />
                                     </div>
                                     <h3 className="mb-2 text-lg font-semibold text-brand-dark group-hover:text-brand-red transition-colors">
                                         {service.title}

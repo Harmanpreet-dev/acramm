@@ -10,6 +10,7 @@ import mayThuHlaing from "@/images/team/MayThuHlaing.png";
 import jaiRam from "@/images/team/JaiRam.png";
 import deepakGodbole from "@/images/team/DeepakGodbole.png";
 import winLwin from "@/images/team/WinLwin.png";
+import parshviGupta from "@/images/parshviGupta.png"
 
 
 
@@ -84,6 +85,12 @@ const associates = [
         image: jaiRam,
         bio: "Mr. Jai Ram is an experienced central banking professional with over 35 years of expertise across a wide range of areas, including banking supervision and regulation. \n\nIn addition to his tenure with the Reserve Bank of India, he served as Chief General Manager at the National Bank for Agriculture and Rural Development (NABARD), where he contributed significantly to the development of the rural and agricultural finance ecosystem. \n\nHe has also completed advanced training in Project Appraisal for Agriculture and Rural Development at Harvard University, USA.",
     },
+    {
+        name: 'Parshvi Gupta',
+        title: "Credit Rating and Data Analyst",
+        image: parshviGupta,
+        bio: "Parshvi holds a B.Tech. degree in Computer Science Engineering and an MBA in Finance and Marketing from the Indian Institute of Technology (IIT), India.\n\nShe possesses over 10 years of professional experience in Analytics, Data Science, Artificial Intelligence (AI), and Business Intelligence, having worked across diverse sectors including Banking, Insurance, and Fast-Moving Consumer Goods (FMCG).\n\nDuring her career, she has been associated with several renowned international organizations, including Barclays (UK), Citibank (USA), Mondelēz International (USA), and Marsh McLennan (USA).\n\nShe is currently associated with our organization as a Freelance Credit Rating and Data Analyst, where she contributes her expertise in data-driven analysis, risk assessment, and credit rating assignments.",
+    }
 ];
 
 export default function AboutPage() {

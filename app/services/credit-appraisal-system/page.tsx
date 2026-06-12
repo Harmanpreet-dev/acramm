@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import loanOriginationSystemImg from "@/images/Loan-origination-system.jpg";
+import capsImg from "@/images/capsimage.png";
+import losImg from "@/images/losimage.png";
+import ccasImg from "@/images/ccasimage.png";
 
 export const metadata: Metadata = {
     title: "Loan Origination (Appraisal) Systems - ACraMM",
@@ -25,6 +28,27 @@ const benefits = [
     {
         title: "Seamless Alignment with IFRS-9 Requirements",
         description: "Facilitates better credit risk assessment with aligned Probability of Default (PD) for calculation of Expected Credit Loss (ECL) provisioning in line with IFRS-9 standards.",
+    },
+];
+
+const subServices: { title: string; description: string; href: string; image: StaticImageData }[] = [
+    {
+        title: "Business Loans (CAPS)",
+        description: "Credit Appraisal and Processing System for business loan assessments.",
+        href: "/services/credit-appraisal-system/caps-business-loans",
+        image: capsImg,
+    },
+    {
+        title: "Retail Loans (LOS)",
+        description: "Loan Origination System for retail and personal loan processing.",
+        href: "/services/credit-appraisal-system/los-retail-loans",
+        image: losImg,
+    },
+    {
+        title: "Credit Cards (CCAS)",
+        description: "Credit Card Appraisal System for credit card applications.",
+        href: "/services/credit-appraisal-system/ccas-credit-cards",
+        image: ccasImg,
     },
 ];
 
@@ -109,6 +133,45 @@ export default function CreditAppraisalSystemPage() {
                                     {benefit.description}
                                 </p>
                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Systems */}
+            <section className="section-padding bg-white" aria-labelledby="systems-heading">
+                <div className="section-container">
+                    <div className="mb-12">
+                        <h2 id="systems-heading" className="mb-4 text-2xl font-bold text-brand-dark sm:text-3xl">
+                            Our Systems
+                        </h2>
+                    </div>
+
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        {subServices.map((service) => (
+                            <Link key={service.title} href={service.href} className="block">
+                                <article className="group rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-brand-red/20 hover:shadow-md h-full">
+                                    <div className="mb-4 overflow-hidden rounded-lg">
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-48 object-cover"
+                                        />
+                                    </div>
+                                    <h3 className="mb-2 text-lg font-semibold text-brand-dark group-hover:text-brand-red transition-colors">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-brand-gray">
+                                        {service.description}
+                                    </p>
+                                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-red">
+                                        Learn More
+                                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                        </svg>
+                                    </span>
+                                </article>
+                            </Link>
                         ))}
                     </div>
                 </div>
