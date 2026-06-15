@@ -67,11 +67,11 @@ export default function BankCreditRatingsPage() {
                     </p>
                 </div>
                 <div className="section-container">
-                    <div className="overflow-hidden rounded-xl">
+                    <div className="flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={bankCreditRatingsImg}
                             alt="Bank Credit Ratings"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

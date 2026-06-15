@@ -51,11 +51,11 @@ export default function IFRS9ImplementationPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="mt-12 overflow-hidden rounded-xl">
+                    <div className="mt-12 flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={ifrs9Img}
                             alt="IFRS-9 Implementation Support Service"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

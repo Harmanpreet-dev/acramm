@@ -68,11 +68,11 @@ export default function NbfiMfiCreditRatingsPage() {
                 </div>
 
                 <div className="section-container mt-5">
-                    <div className="overflow-hidden rounded-xl">
+                    <div className="flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={nbfiImg}
                             alt="NBFI / MFI Credit Ratings"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

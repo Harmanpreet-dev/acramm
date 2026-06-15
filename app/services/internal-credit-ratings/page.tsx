@@ -69,11 +69,11 @@ export default function InternalCreditRatingsPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="mt-12 overflow-hidden rounded-xl">
+                    <div className="mt-12 flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={bankInternalCreditRatingModelsImg}
                             alt="Bank Internal Credit Rating Models"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

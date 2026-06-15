@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import loanOriginationSystemImg from "@/images/Loan-origination-system.jpg";
+// import loanOriginationSystemImg from "@/images/Loan-origination-system.jpg";
 import capsImg from "@/images/capsimage.png";
 import losImg from "@/images/losimage.png";
 import ccasImg from "@/images/ccasimage.png";
@@ -91,12 +91,12 @@ export default function CreditAppraisalSystemPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="mt-12 overflow-hidden rounded-xl">
-                        <Image
+                    <div className="mt-12 flex justify-center overflow-hidden rounded-xl">
+                        {/* <Image
                             src={loanOriginationSystemImg}
                             alt="Loan Origination System"
-                            className="w-full h-auto"
-                        />
+                            className="w-[70%] h-auto"
+                        /> */}
                     </div>
                 </div>
             </section>

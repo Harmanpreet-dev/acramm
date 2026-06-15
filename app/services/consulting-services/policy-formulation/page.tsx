@@ -47,11 +47,11 @@ export default function PolicyFormulationPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="mt-12 overflow-hidden rounded-xl">
+                    <div className="mt-12 flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={consultingImg}
                             alt="Policy Formulation Services"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

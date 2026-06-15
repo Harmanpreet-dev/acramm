@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import trainingImg from "@/images/traning.png";
+// import Image from "next/image";
+// import trainingImg from "@/images/traning.png";
 
 export const metadata: Metadata = {
     title: "6-Hours Workshop on IFRS-9 and Basel Norms - Training - ACraMM",
@@ -57,11 +57,11 @@ export default function IFRS9BaselNormsPage() {
 
                     {/* Image */}
                     <div className="mt-12 overflow-hidden rounded-xl">
-                        <Image
+                        {/* <Image
                             src={trainingImg}
                             alt="IFRS-9 and Basel Norms Workshop"
                             className="w-full h-auto"
-                        />
+                        /> */}
                     </div>
 
                     {/* Download PDF */}

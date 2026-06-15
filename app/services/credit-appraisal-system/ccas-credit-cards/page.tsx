@@ -48,11 +48,11 @@ export default function CCASCreditCardsPage() {
             <section className="section-padding bg-white" aria-labelledby="content-heading">
                 <div className="section-container">
                     {/* Image */}
-                    <div className="overflow-hidden rounded-xl">
+                    <div className="flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={ccasImg}
                             alt="Credit Card Appraisal System"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

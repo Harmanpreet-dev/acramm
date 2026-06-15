@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import trainingImg from "@/images/traning.png";
+// import Image from "next/image";
+// import trainingImg from "@/images/traning.png";
 
 export const metadata: Metadata = {
     title: "40-Hours Program on Credit Risk Management - Training - ACraMM",
@@ -57,11 +57,11 @@ export default function CreditRiskManagementPage() {
 
                     {/* Image */}
                     <div className="mt-12 overflow-hidden rounded-xl">
-                        <Image
+                        {/* <Image
                             src={trainingImg}
                             alt="Credit Risk Management Training Program"
                             className="w-full h-auto"
-                        />
+                        /> */}
                     </div>
 
                     {/* Download PDF */}

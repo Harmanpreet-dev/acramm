@@ -64,18 +64,18 @@ export default function InsuranceCompanyRatingsPage() {
                 </div>
                 <div className="section-container">
                     <div className="space-y-8">
-                        <div className="overflow-hidden rounded-xl">
+                        <div className="flex justify-center overflow-hidden rounded-xl">
                             <Image
                                 src={insuranceImg1}
                                 alt="Insurance Company Credit Ratings Scale 1"
-                                className="w-full h-auto"
+                                className="w-[70%] h-auto"
                             />
                         </div>
-                        <div className="overflow-hidden rounded-xl">
+                        <div className="flex justify-center overflow-hidden rounded-xl">
                             <Image
                                 src={insuranceImg2}
                                 alt="Insurance Company Credit Ratings Scale 2"
-                                className="w-full h-auto"
+                                className="w-[70%] h-auto"
                             />
                         </div>
                     </div>

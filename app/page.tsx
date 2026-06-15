@@ -1,6 +1,5 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
 import ServiceBanner from "@/components/ServiceBanner";
 
 export default function Home() {
@@ -8,7 +7,6 @@ export default function Home() {
         <>
             <HeroSection />
             <AboutSection />
-            <ServicesSection />
             <ServiceBanner />
         </>
     );

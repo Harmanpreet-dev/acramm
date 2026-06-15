@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import consultingImg from "@/images/Consulting.png";
+// import Image from "next/image";
+// import consultingImg from "@/images/Consulting.png";
 
 export const metadata: Metadata = {
     title: "Consulting Services (Banks/NBFIs) - ACraMM",
@@ -62,11 +62,11 @@ export default function ConsultingServicesPage() {
 
                     {/* Image */}
                     <div className="mt-12 overflow-hidden rounded-xl">
-                        <Image
+                        {/* <Image
                             src={consultingImg}
                             alt="Consulting Services"
                             className="w-full h-auto"
-                        />
+                        /> */}
                     </div>
                 </div>
             </section>

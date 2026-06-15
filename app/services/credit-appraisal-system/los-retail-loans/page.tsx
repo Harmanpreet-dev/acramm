@@ -55,11 +55,11 @@ export default function LOSRetailLoansPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="mt-12 overflow-hidden rounded-xl">
+                    <div className="mt-12 flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={losImg}
                             alt="Loan Origination System for Retail Loans"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>

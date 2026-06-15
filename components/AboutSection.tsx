@@ -19,11 +19,12 @@ export default function AboutSection() {
                         >
                             About Us
                         </h2>
+                        <p className="leading-relaxed text-brand-gray">
+                            A-Cra is a Credit Rating Agency set up in Myanmar with domain experts from Myanmar and other countries. We plan to provide corporate credit ratings (due diligence) to different types of Myanmar companies.
+                        </p>
+                        <br />
                         <p className="mb-6 leading-relaxed text-brand-gray">
-                            A-Cra is a Credit Rating Agency set up in Myanmar with domain
-                            experts from Myanmar and other countries. Our solutions are mainly
-                            to help the Micro, Small and Medium Enterprises in getting faster
-                            credit decisions from financial institutions.
+                            We also offer Loan Origination (Processing) Systems to commercial banks and other financial institutions for quality credit decisions.
                         </p>
                         <Link
                             href="/about"

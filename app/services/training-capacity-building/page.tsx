@@ -58,11 +58,11 @@ export default function TrainingCapacityBuildingPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="mt-12 overflow-hidden rounded-xl">
+                    <div className="mt-12 flex justify-center overflow-hidden rounded-xl">
                         <Image
                             src={trainingImg}
                             alt="Training and Capacity Building Services"
-                            className="w-full h-auto"
+                            className="w-[70%] h-auto"
                         />
                     </div>
                 </div>
