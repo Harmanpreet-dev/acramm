@@ -67,7 +67,7 @@ export default function CreditRiskManagementPage() {
                     {/* Download PDF */}
                     <div className="mt-8">
                         <a
-                            href="/pdf/40-Hours-Credit-Risk-Management-Program.pdf"
+                            href="/pdf/40-Hours Credit Risk Management Program.pdf"
                             download
                             className="btn-primary inline-flex items-center gap-2"
                         >

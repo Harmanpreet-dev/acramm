@@ -58,8 +58,12 @@ const contactInfo = [
         ),
         content: (
             <div className="space-y-1 text-sm text-brand-gray">
-                <p>01-8256425, 01-8248237</p>
-                <p>09400759957, 09440700276</p>
+                <a href="tel:+959400759957" className="block transition-colors hover:text-brand-red">
+                    Surinder Angroola: +95-9400759957
+                </a>
+                <a href="tel:+959440700276" className="block transition-colors hover:text-brand-red">
+                    Bo Bo Myint: +95-9440700276
+                </a>
             </div>
         ),
     },

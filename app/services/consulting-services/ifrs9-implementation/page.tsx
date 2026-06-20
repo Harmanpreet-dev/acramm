@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import ifrs9Img from "@/images/ IFRS9.png";
+import ifrs9Img from "@/images/ IFRS9_2.png";
 
 export const metadata: Metadata = {
     title: "IFRS-9 Implementation Support Service - ACraMM",

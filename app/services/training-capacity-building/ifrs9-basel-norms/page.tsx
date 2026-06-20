@@ -67,7 +67,7 @@ export default function IFRS9BaselNormsPage() {
                     {/* Download PDF */}
                     <div className="mt-8">
                         <a
-                            href="/pdf/6-Hours-Workshop-IFRS9-Basel-Guidelines.pdf"
+                            href="/pdf/6-Hours Workshop on IFRS-9 and Basel Guidelines.pdf"
                             download
                             className="btn-primary inline-flex items-center gap-2"
                         >

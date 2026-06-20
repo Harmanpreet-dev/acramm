@@ -200,12 +200,20 @@ export default function Footer() {
                                             d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                                         />
                                     </svg>
-                                    <a
-                                        href="tel:018256425"
-                                        className="text-sm text-gray-400 transition-colors hover:text-brand-red"
-                                    >
-                                        01-8256425, 01-8248237
-                                    </a>
+                                    <div className="flex flex-col gap-1">
+                                        <a
+                                            href="tel:+959400759957"
+                                            className="text-sm text-gray-400 transition-colors hover:text-brand-red whitespace-nowrap"
+                                        >
+                                            Surinder Angroola : +95-9400759957
+                                        </a>
+                                        <a
+                                            href="tel:+959440700276"
+                                            className="text-sm text-gray-400 transition-colors hover:text-brand-red whitespace-nowrap"
+                                        >
+                                            Bo Bo Myint : +95-9440700276
+                                        </a>
+                                    </div>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <svg
@@ -222,12 +230,26 @@ export default function Footer() {
                                             d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                                         />
                                     </svg>
-                                    <a
-                                        href="mailto:info@acramm.com"
-                                        className="text-sm text-gray-400 transition-colors hover:text-brand-red"
-                                    >
-                                        info@acramm.com
-                                    </a>
+                                    <div className="flex flex-col gap-1">
+                                        <a
+                                            href="mailto:info@acramm.com"
+                                            className="text-sm text-gray-400 transition-colors hover:text-brand-red"
+                                        >
+                                            info@acramm.com
+                                        </a>
+                                        <a
+                                            href="mailto:angroolasp@acramm.com"
+                                            className="text-sm text-gray-400 transition-colors hover:text-brand-red"
+                                        >
+                                            angroolasp@acramm.com
+                                        </a>
+                                        <a
+                                            href="mailto:bobomyint@acramm.com"
+                                            className="text-sm text-gray-400 transition-colors hover:text-brand-red"
+                                        >
+                                            bobomyint@acramm.com
+                                        </a>
+                                    </div>
                                 </li>
                             </ul>
                         </address>
